@@ -8,8 +8,122 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Surfaces */
+  --color-surface: #f9f9f9;
+  --color-surface-dim: #dadada;
+  --color-surface-bright: #f9f9f9;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f3f4;
+  --color-surface-container: #eeeeee;
+  --color-surface-container-high: #e8e8e8;
+  --color-surface-container-highest: #e2e2e2;
+  --color-surface-variant: #e2e2e2;
+  --color-surface-muted: #f4f4f5;
+
+  --color-on-surface: #1a1c1c;
+  --color-on-surface-variant: #4c4546;
+
+  --color-inverse-surface: #2f3131;
+  --color-inverse-on-surface: #f0f1f1;
+
+  /* Outline */
+  --color-outline: #7e7576;
+  --color-outline-variant: #cfc4c5;
+  --color-border-light: #e5e7eb;
+
+  /* Primary */
+  --color-primary: #000000;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #1b1b1b;
+  --color-on-primary-container: #848484;
+  --color-inverse-primary: #c6c6c6;
+  --color-surface-tint: #5e5e5e;
+
+  --color-primary-fixed: #e2e2e2;
+  --color-primary-fixed-dim: #c6c6c6;
+  --color-on-primary-fixed: #1b1b1b;
+  --color-on-primary-fixed-variant: #474747;
+
+  /* Secondary */
+  --color-secondary: #5d5e66;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #e3e1ec;
+  --color-on-secondary-container: #63646c;
+
+  --color-secondary-fixed: #e3e1ec;
+  --color-secondary-fixed-dim: #c6c5cf;
+  --color-on-secondary-fixed: #1a1b22;
+  --color-on-secondary-fixed-variant: #46464e;
+
+  /* Tertiary */
+  --color-tertiary: #000000;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #002113;
+  --color-on-tertiary-container: #009668;
+
+  --color-tertiary-fixed: #6ffbbe;
+  --color-tertiary-fixed-dim: #4edea3;
+  --color-on-tertiary-fixed: #002113;
+  --color-on-tertiary-fixed-variant: #005236;
+
+  /* Error */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* Misc accents */
+  --color-text-muted: #71717a;
+  --color-accent-success: #10b981;
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+
+  /* Typography scale */
+  --font-size-display-hero: 48px;
+  --font-size-display-hero--line-height: 1.1;
+  --font-size-display-hero--letter-spacing: -0.02em;
+
+  --font-size-display-hero-mobile: 32px;
+  --font-size-display-hero-mobile--line-height: 1.2;
+  --font-size-display-hero-mobile--letter-spacing: -0.01em;
+
+  --font-size-headline-section: 24px;
+  --font-size-headline-section--line-height: 32px;
+  --font-size-headline-section--letter-spacing: -0.01em;
+
+  --font-size-headline-item: 18px;
+  --font-size-headline-item--line-height: 24px;
+
+  --font-size-body-lg: 16px;
+  --font-size-body-lg--line-height: 26px;
+
+  --font-size-body-md: 14px;
+  --font-size-body-md--line-height: 22px;
+
+  --font-size-label-tag: 12px;
+  --font-size-label-tag--line-height: 16px;
+
+  --font-size-metadata: 12px;
+  --font-size-metadata--line-height: 16px;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-DEFAULT: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --spacing-container-max: 800px;
+  --spacing-section-gap: 4rem;
+  --spacing-element-gap: 1.5rem;
+  --spacing-gutter: 1rem;
+  --spacing-margin-mobile: 1.25rem;
+  --spacing-margin-desktop: 2.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +136,4 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
