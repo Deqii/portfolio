@@ -27,7 +27,7 @@ export default function Hero() {
             <span className="text-on-surface underline cursor-pointer">
               start a chat
             </span>{" "}
-            chat support coming soon.
+            <br /> chat support coming soon.
           </p>
 
           <div className="mt-8 flex items-center gap-3">
