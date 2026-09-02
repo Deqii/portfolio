@@ -71,35 +71,32 @@
   --color-text-muted: #71717a;
   --color-accent-success: #10b981;
 
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
+  --text-display-hero: 48px;
+  --text-display-hero--line-height: 1.1;
+  --text-display-hero--letter-spacing: -0.02em;
 
-  --font-size-display-hero: 48px;
-  --font-size-display-hero--line-height: 1.1;
-  --font-size-display-hero--letter-spacing: -0.02em;
+  --text-display-hero-mobile: 32px;
+  --text-display-hero-mobile--line-height: 1.2;
+  --text-display-hero-mobile--letter-spacing: -0.01em;
 
-  --font-size-display-hero-mobile: 32px;
-  --font-size-display-hero-mobile--line-height: 1.2;
-  --font-size-display-hero-mobile--letter-spacing: -0.01em;
+  --text-headline-section: 24px;
+  --text-headline-section--line-height: 32px;
+  --text-headline-section--letter-spacing: -0.01em;
 
-  --font-size-headline-section: 24px;
-  --font-size-headline-section--line-height: 32px;
-  --font-size-headline-section--letter-spacing: -0.01em;
+  --text-headline-item: 18px;
+  --text-headline-item--line-height: 24px;
 
-  --font-size-headline-item: 18px;
-  --font-size-headline-item--line-height: 24px;
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 26px;
 
-  --font-size-body-lg: 16px;
-  --font-size-body-lg--line-height: 26px;
+  --text-body-md: 14px;
+  --text-body-md--line-height: 22px;
 
-  --font-size-body-md: 14px;
-  --font-size-body-md--line-height: 22px;
+  --text-label-tag: 12px;
+  --text-label-tag--line-height: 16px;
 
-  --font-size-label-tag: 12px;
-  --font-size-label-tag--line-height: 16px;
-
-  --font-size-metadata: 12px;
-  --font-size-metadata--line-height: 16px;
+  --text-metadata: 12px;
+  --text-metadata--line-height: 16px;
 
   --radius-sm: 0.25rem;
   --radius-DEFAULT: 0.5rem;
