@@ -55,7 +55,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="mailto:hello@example.com"
+              href="mailto:tioprayudha07@gmail.com"
               aria-label="Email"
               className="rounded p-2 text-text-muted hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors"
             >

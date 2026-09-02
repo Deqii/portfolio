@@ -11,7 +11,7 @@ const WORK_ITEMS = [
     company: "PT Teknologi Edukasi Indonesia",
     role: "Front-End Developer Intern",
     period: "Oct 2025 - Jan 2026",
-    logo: "/img/logo-tei.jfif",
+    logo: "/img/logo-tei.jpg",
     bullets: [
       "Redesigned the Luarsekolah landing page using Laravel Blade and Tailwind CSS, taking the Lighthouse score from around 60 to 92 across all device breakpoints.",
       "Built 8+ reusable Blade components and integrated 3 backend API endpoints, cutting down template duplication and enabling dynamic content rendering.",
@@ -25,7 +25,7 @@ const EDUCATION_ITEMS = [
     company: "DBS Foundation x Dicoding",
     role: "Front-End & Back-End Developer",
     period: "May 2025 - Jul 2025",
-    logo: "/img/logo-dicoding.jfif",
+    logo: "/img/logo-dicoding.jpg",
     bullets: [
       "Led a 5-person team to build Nutrilance, a web app where users enter dietary data and get personalized diet plans, food recommendations, and recipes powered by an ML model.",
       "Built the full frontend with React.js and Tailwind CSS, plus Flask REST APIs with SQLite, connecting ML predictions to a responsive UI with a Lighthouse performance score above 85%.",
@@ -36,7 +36,7 @@ const EDUCATION_ITEMS = [
     company: "Universitas Sangga Buana YPKP",
     role: "Bachelor of Engineering, Informatics Engineering",
     period: "Oct 2022 - 2026",
-    logo: "/img/logo-usb.jfif",
+    logo: "/img/logo-usb.jpg",
     bullets: ["GPA 3.87 / 4.00"],
   },
 ];

@@ -35,7 +35,7 @@ export default function Footer() {
               <Code2 size={16} />
             </a>
             <a
-              href="mailto:hello@example.com"
+              href="mailto:tioprayudha07@gmail"
               aria-label="Email"
               className="rounded p-2 text-text-muted hover:bg-surface-container
               hover:text-on-surface cursor-pointer transition-colors"
