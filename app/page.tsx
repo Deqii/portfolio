@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import WorkEducation from "@/components/WorkEducation";
 import Skills from "@/components/Skills";
+import FeaturedProjects from "@/components/FeaturedProjects";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <WorkEducation />
       <Skills />
+      <FeaturedProjects />
     </>
   );
 }
