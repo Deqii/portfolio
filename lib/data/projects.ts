@@ -17,6 +17,7 @@ export interface Project {
   tech: ProjectTech[];
   image: string;
   sourceUrl: string | null;
+  liveUrl?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -29,7 +30,7 @@ export const PROJECTS: Project[] = [
       { name: "Tailwind CSS", icon: SiTailwindcss },
     ],
     image: "/img/project-himatif.png",
-    sourceUrl: null,
+    sourceUrl: "https://github.com/Deqii/himatif-ypkp",
   },
   {
     name: "MelinjoScan",
