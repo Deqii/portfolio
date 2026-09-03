@@ -3,41 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
-import {
-  SiNextdotjs,
-  SiTailwindcss,
-  SiFlask,
-  SiPython,
-  SiScikitlearn,
-  SiGithub,
-} from "@icons-pack/react-simple-icons";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import Container from "@/components/Container";
-
-const PROJECTS = [
-  {
-    name: "Project Himatif",
-    description:
-      "Landing page for a campus student organization (Himpunan Mahasiswa).",
-    tech: [
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "Tailwind CSS", icon: SiTailwindcss },
-    ],
-    image: "/img/project-himatif.png",
-    sourceUrl: null,
-  },
-  {
-    name: "MelinjoScan",
-    description:
-      "Melinjo seed ripeness classifier using Color Moment HSV and Random Forest, reaching 96.25% test accuracy. Undergraduate thesis project.",
-    tech: [
-      { name: "Flask", icon: SiFlask },
-      { name: "Python", icon: SiPython },
-      { name: "scikit-learn", icon: SiScikitlearn },
-    ],
-    image: "/img/project-melinjoscan.png",
-    sourceUrl: null,
-  },
-];
+import { PROJECTS } from "@/lib/data/projects";
 
 export default function FeaturedProjects() {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
