@@ -56,6 +56,16 @@ export default function FeaturedProjects() {
                   ))}
                 </div>
 
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded bg-primary text-on-primary px-3 py-2 text-body-md hover:opacity-90 transition-opacity mr-2"
+                  >
+                    Website
+                  </a>
+                )}
                 {project.sourceUrl ? (
                   <a
                     href={project.sourceUrl}
