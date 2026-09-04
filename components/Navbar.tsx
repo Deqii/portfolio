@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useTheme } from "@/components/ThemeToggleProvider";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FileText, Moon, Menu, X } from "lucide-react";
+import { FileText, Moon, Sun, Menu, X } from "lucide-react";
 import Container from "@/components/Container";
 
 const NAV_LINKS = [
@@ -16,6 +17,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <div className="w-full">
@@ -32,9 +34,10 @@ export default function Navbar() {
             <button
               type="button"
               aria-label="Toggle dark mode"
+              onClick={toggleTheme}
               className="inline-flex rounded p-2 text-text-muted hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors"
             >
-              <Moon size={18} />
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </div>
 
@@ -68,9 +71,10 @@ export default function Navbar() {
             <button
               type="button"
               aria-label="Toggle dark mode"
+              onClick={toggleTheme}
               className="inline-flex rounded p-2 text-text-muted hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors"
             >
-              <Moon size={18} />
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </div>
 

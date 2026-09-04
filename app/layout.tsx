@@ -3,6 +3,8 @@ import { Inter, JetBrains_Mono, Calistoga } from "next/font/google";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ThemeToggleProvider } from "@/components/ThemeToggleProvider";
+import { themeInitScript } from "@/lib/theme-script";
 
 import "./globals.css";
 
@@ -31,12 +33,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} ${jetbrainsMono.variable} ${calistoga.variable} h-full antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ThemeToggleProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ThemeToggleProvider>
       </body>
     </html>
   );
