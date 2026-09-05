@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Link as LinkIcon, Code2, Mail } from "lucide-react";
 import Container from "@/components/Container";
+import HoverScale from "@/components/HoverScale";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -20,28 +21,31 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center gap-3">
-            <a
+            <HoverScale
+              as="a"
               href="#"
               aria-label="Link"
               className="rounded p-2 text-text-muted hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors"
             >
               <LinkIcon size={16} />
-            </a>
-            <a
+            </HoverScale>
+            <HoverScale
+              as="a"
               href="#"
               aria-label="Source"
               className="rounded p-2 text-text-muted hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors"
             >
               <Code2 size={16} />
-            </a>
-            <a
+            </HoverScale>
+            <HoverScale
+              as="a"
               href="mailto:tioprayudha07@gmail"
               aria-label="Email"
               className="rounded p-2 text-text-muted hover:bg-surface-container
               hover:text-on-surface cursor-pointer transition-colors"
             >
               <Mail size={16} />
-            </a>
+            </HoverScale>
           </div>
         </div>
       </Container>

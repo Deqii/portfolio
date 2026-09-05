@@ -2,6 +2,7 @@ import { Mail, Download } from "lucide-react";
 import { SiLinkerd, SiGithub } from "@icons-pack/react-simple-icons";
 import Container from "@/components/Container";
 import FadeInSection from "@/components/FadeInSection";
+import HoverScale from "@/components/HoverScale";
 
 const CONTACT_LINKS = [
   {
@@ -38,7 +39,8 @@ export default function ContactPage() {
 
           <div className="flex flex-col gap-3 mb-8">
             {CONTACT_LINKS.map((link) => (
-              <a
+              <HoverScale
+                as="a"
                 key={link.label}
                 href={link.href}
                 target={link.label === "Email" ? undefined : "_blank"}
@@ -54,18 +56,19 @@ export default function ContactPage() {
                   </p>
                   <p className="text-body-md text-text-muted">{link.value}</p>
                 </div>
-              </a>
+              </HoverScale>
             ))}
           </div>
 
-          <a
+          <HoverScale
+            as="a"
             href="/img/resume.pdf"
             download
             className="inline-flex items-center gap-2 rounded bg-primary text-on-primary px-5 py-2.5 text-body-md hover:opacity-90 transition-opacity"
           >
             <Download size={16} />
             Download Resume
-          </a>
+          </HoverScale>
         </section>
       </FadeInSection>
     </Container>

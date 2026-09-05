@@ -4,6 +4,7 @@ import { ExternalLink, LinkIcon } from "lucide-react";
 import Container from "@/components/Container";
 import { PROJECTS } from "@/lib/data/projects";
 import FadeInSection from "@/components/FadeInSection";
+import HoverScale from "@/components/HoverScale";
 
 export default function ProjectsPage() {
   return (
@@ -22,7 +23,8 @@ export default function ProjectsPage() {
               const reversed = index % 2 === 1;
 
               return (
-                <article
+                <HoverScale
+                  as="article"
                   key={project.name}
                   className="bg-surface-container-lowest border border-border-light rounded-xl overflow-hidden"
                 >
@@ -64,19 +66,21 @@ export default function ProjectsPage() {
 
                       <div className="flex gap-3">
                         {project.liveUrl && (
-                          <a
+                          <HoverScale
+                            as="a"
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center bg-primary text-on-primary text-[15px] font-medium px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
+                            className="inline-flex items-center gap-2 justify-center bg-primary text-on-primary text-[15px] font-medium px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
                           >
                             <LinkIcon size={16} />
                             Website
-                          </a>
+                          </HoverScale>
                         )}
 
                         {project.sourceUrl ? (
-                          <a
+                          <HoverScale
+                            as="a"
                             href={project.sourceUrl}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -85,21 +89,22 @@ export default function ProjectsPage() {
                             <SiGithub size={16} />
                             Source
                             <ExternalLink size={14} />
-                          </a>
+                          </HoverScale>
                         ) : (
-                          <button
+                          <HoverScale
+                            as="button"
                             type="button"
                             disabled
                             className="inline-flex items-center gap-2 justify-center border border-border-light text-text-muted text-[15px] font-medium px-5 py-2.5 rounded-lg cursor-not-allowed"
                           >
                             <SiGithub size={16} />
                             Source
-                          </button>
+                          </HoverScale>
                         )}
                       </div>
                     </div>
                   </div>
-                </article>
+                </HoverScale>
               );
             })}
           </div>

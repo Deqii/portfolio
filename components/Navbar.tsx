@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FileText, Moon, Sun, Menu, X } from "lucide-react";
 import Container from "@/components/Container";
+import HoverScale from "@/components/HoverScale";
 
 const NAV_LINKS = [
   { href: "/", label: "home" },
@@ -31,7 +32,8 @@ export default function Navbar() {
             >
               <FileText size={18} />
             </Link>
-            <button
+            <HoverScale
+              as="button"
               type="button"
               aria-label="Toggle dark mode"
               onClick={toggleTheme}
@@ -46,7 +48,7 @@ export default function Navbar() {
               ) : (
                 <Moon size={18} />
               )}
-            </button>
+            </HoverScale>
           </div>
 
           <div className="hidden sm:flex gap-6">
@@ -76,24 +78,26 @@ export default function Navbar() {
             >
               <FileText size={18} />
             </Link>
-            <button
+            <HoverScale
+              as="button"
               type="button"
               aria-label="Toggle dark mode"
               onClick={toggleTheme}
               className="inline-flex rounded p-2 text-text-muted hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors"
             >
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
+            </HoverScale>
           </div>
 
-          <button
+          <HoverScale
+            as="button"
             type="button"
             aria-label="Toggle menu"
             onClick={() => setIsOpen(!isOpen)}
             className="sm:hidden rounded p-2 text-text-muted hover:bg-surface-container cursor-pointer transition-colors"
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          </HoverScale>
         </nav>
 
         {isOpen && (
