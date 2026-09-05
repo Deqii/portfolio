@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Container from "@/components/Container";
+import FadeInSection from "@/components/FadeInSection";
 
 type Tab = "work" | "education";
 
@@ -47,74 +48,76 @@ export default function WorkEducation() {
 
   return (
     <Container>
-      <section className="py-8">
-        <div className="rounded-lg border border-border-light p-6">
-          <div className="inline-flex rounded-full bg-surface-container p-1">
-            <button
-              type="button"
-              onClick={() => setActiveTab("work")}
-              className={`px-6 py-2 rounded-full text-body-md cursor-pointer transition-colors ${
-                activeTab === "work"
-                  ? "bg-surface-container-lowest text-on-surface shadow-sm"
-                  : "text-text-muted"
-              }`}
-            >
-              Work
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveTab("education")}
-              className={`px-6 py-2 rounded-full text-body-md cursor-pointer transition-colors ${
-                activeTab === "education"
-                  ? "bg-surface-container-lowest text-on-surface shadow-sm"
-                  : "text-text-muted"
-              }`}
-            >
-              Education
-            </button>
-          </div>
+      <FadeInSection>
+        <section className="py-8">
+          <div className="rounded-lg border border-border-light p-6">
+            <div className="inline-flex rounded-full bg-surface-container p-1">
+              <button
+                type="button"
+                onClick={() => setActiveTab("work")}
+                className={`px-6 py-2 rounded-full text-body-md cursor-pointer transition-colors ${
+                  activeTab === "work"
+                    ? "bg-surface-container-lowest text-on-surface shadow-sm"
+                    : "text-text-muted"
+                }`}
+              >
+                Experience
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("education")}
+                className={`px-6 py-2 rounded-full text-body-md cursor-pointer transition-colors ${
+                  activeTab === "education"
+                    ? "bg-surface-container-lowest text-on-surface shadow-sm"
+                    : "text-text-muted"
+                }`}
+              >
+                Education
+              </button>
+            </div>
 
-          <div className="mt-8 flex flex-col gap-8">
-            {items.map((item) => (
-              <div key={item.company} className="flex gap-4">
-                <div className="relative w-12 h-12 shrink-0 rounded-full overflow-hidden bg-surface-container-high border border-gray-300">
-                  <Image
-                    src={item.logo}
-                    alt={`${item.company} logo`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                <div className="flex-1">
-                  <div className="flex items-baseline justify-between flex-wrap gap-2">
-                    <h3 className="text-headline-item text-on-surface">
-                      {item.company}
-                    </h3>
-                    <span className="text-body-md text-text-muted">
-                      {item.period}
-                    </span>
+            <div className="mt-8 flex flex-col gap-8">
+              {items.map((item) => (
+                <div key={item.company} className="flex gap-4">
+                  <div className="relative w-12 h-12 shrink-0 rounded-full overflow-hidden bg-surface-container-high border border-gray-300">
+                    <Image
+                      src={item.logo}
+                      alt={`${item.company} logo`}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-                  <p className="text-body-md text-text-muted mt-1">
-                    {item.role}
-                  </p>
 
-                  <ul className="mt-3 flex flex-col gap-2">
-                    {item.bullets.map((bullet) => (
-                      <li
-                        key={bullet}
-                        className="text-body-md text-on-surface-variant pl-4 relative before:content-['•'] before:absolute before:left-0"
-                      >
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="flex-1">
+                    <div className="flex items-baseline justify-between flex-wrap gap-2">
+                      <h3 className="text-headline-item text-on-surface">
+                        {item.company}
+                      </h3>
+                      <span className="text-body-md text-text-muted">
+                        {item.period}
+                      </span>
+                    </div>
+                    <p className="text-body-md text-text-muted mt-1">
+                      {item.role}
+                    </p>
+
+                    <ul className="mt-3 flex flex-col gap-2">
+                      {item.bullets.map((bullet) => (
+                        <li
+                          key={bullet}
+                          className="text-body-md text-on-surface-variant pl-4 relative before:content-['•'] before:absolute before:left-0"
+                        >
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </FadeInSection>
     </Container>
   );
 }
