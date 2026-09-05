@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Container from "@/components/Container";
 import FadeInSection from "@/components/FadeInSection";
+import HoverScale from "@/components/HoverScale";
 
 type Tab = "work" | "education";
 
@@ -52,7 +53,8 @@ export default function WorkEducation() {
         <section className="py-8">
           <div className="rounded-lg border border-border-light p-6">
             <div className="inline-flex rounded-full bg-surface-container p-1">
-              <button
+              <HoverScale
+                as="button"
                 type="button"
                 onClick={() => setActiveTab("work")}
                 className={`px-6 py-2 rounded-full text-body-md cursor-pointer transition-colors ${
@@ -62,8 +64,9 @@ export default function WorkEducation() {
                 }`}
               >
                 Experience
-              </button>
-              <button
+              </HoverScale>
+              <HoverScale
+                as="button"
                 type="button"
                 onClick={() => setActiveTab("education")}
                 className={`px-6 py-2 rounded-full text-body-md cursor-pointer transition-colors ${
@@ -73,7 +76,7 @@ export default function WorkEducation() {
                 }`}
               >
                 Education
-              </button>
+              </HoverScale>
             </div>
 
             <div className="mt-8 flex flex-col gap-8">

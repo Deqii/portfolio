@@ -3,11 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { X, ArrowRight } from "lucide-react";
-import { SiGithub, SiWebtrees } from "@icons-pack/react-simple-icons";
+import { X, ArrowRight, ExternalLink } from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import Container from "@/components/Container";
 import { PROJECTS } from "@/lib/data/projects";
 import FadeInSection from "@/components/FadeInSection";
+import HoverScale from "./HoverScale";
 
 export default function FeaturedProjects() {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
@@ -22,11 +23,12 @@ export default function FeaturedProjects() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {PROJECTS.filter((project) => project.featured).map((project) => (
-              <div
+              <HoverScale
                 key={project.name}
                 className="rounded-lg border border-border-light overflow-hidden"
               >
-                <button
+                <HoverScale
+                  as="button"
                   type="button"
                   onClick={() => setLightboxImage(project.image)}
                   className="relative h-40 w-full bg-surface-container-high cursor-pointer"
@@ -37,7 +39,7 @@ export default function FeaturedProjects() {
                     fill
                     className="object-cover"
                   />
-                </button>
+                </HoverScale>
 
                 <div className="p-6">
                   <h3 className="text-headline-item text-on-surface mb-2">
@@ -60,34 +62,37 @@ export default function FeaturedProjects() {
                   </div>
 
                   {project.liveUrl && (
-                    <a
+                    <HoverScale
+                      as="a"
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded bg-primary text-on-primary px-3 py-2 text-body-md hover:opacity-90 transition-opacity mr-2"
                     >
-                      <SiWebtrees size={16} /> Live
-                    </a>
+                      <ExternalLink size={16} /> Live
+                    </HoverScale>
                   )}
                   {project.sourceUrl ? (
-                    <a
+                    <HoverScale
+                      as="a"
                       href={project.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded bg-primary text-on-primary px-3 py-2 text-body-md hover:opacity-90 transition-opacity"
                     >
                       <SiGithub size={16} /> Source
-                    </a>
+                    </HoverScale>
                   ) : (
-                    <button
+                    <HoverScale
+                      as="button"
                       type="button"
                       className="inline-flex items-center gap-2 rounded bg-surface-container-high text-text-muted px-3 py-2 text-body-md cursor-not-allowed"
                     >
                       <SiGithub size={16} /> Source
-                    </button>
+                    </HoverScale>
                   )}
                 </div>
-              </div>
+              </HoverScale>
             ))}
           </div>
           <div className="mt-8 flex justify-center">
@@ -105,14 +110,15 @@ export default function FeaturedProjects() {
             onClick={() => setLightboxImage(null)}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6 cursor-pointer"
           >
-            <button
+            <HoverScale
+              as="button"
               type="button"
               onClick={() => setLightboxImage(null)}
               aria-label="Close"
               className="absolute top-6 right-6 text-white cursor-pointer hover:opacity-70 transition-opacity"
             >
               <X size={28} />
-            </button>
+            </HoverScale>
 
             <div className="relative w-full max-w-3xl h-[70vh]">
               <Image

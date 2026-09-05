@@ -6,6 +6,7 @@ import { Award, FileImage, ExternalLink, X } from "lucide-react";
 import Container from "@/components/Container";
 import { CERTIFICATES } from "@/lib/data/certificates";
 import FadeInSection from "@/components/FadeInSection";
+import HoverScale from "@/components/HoverScale";
 
 export default function CertificatesPage() {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
@@ -23,7 +24,7 @@ export default function CertificatesPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {CERTIFICATES.map((cert) => (
-              <div
+              <HoverScale
                 key={cert.title}
                 className="rounded-lg border border-border-light overflow-hidden flex flex-col"
               >
@@ -97,7 +98,7 @@ export default function CertificatesPage() {
                     )}
                   </div>
                 </div>
-              </div>
+              </HoverScale>
             ))}
           </div>
         </section>

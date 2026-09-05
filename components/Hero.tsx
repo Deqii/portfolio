@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FileText, Link as LinkIcon, Code2, Mail } from "lucide-react";
 import Container from "@/components/Container";
 import FadeInSection from "@/components/FadeInSection";
+import HoverScale from "@/components/HoverScale";
 
 export default function Hero() {
   return (
@@ -33,36 +34,40 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex items-center gap-3">
-              <a
+              <HoverScale
+                as="a"
                 href="/img/resume.pdf"
                 className="inline-flex items-center gap-2 rounded bg-primary text-on-primary px-4 py-2 text-body-md hover:opacity-90 transition-opacity"
               >
                 Resume <FileText size={16} />
-              </a>
+              </HoverScale>
 
-              <a
+              <HoverScale
+                as="a"
                 href="#"
                 aria-label="Link"
                 className="rounded p-2 text-text-muted hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors"
               >
                 <LinkIcon size={18} />
-              </a>
+              </HoverScale>
 
-              <a
+              <HoverScale
+                as="a"
                 href="#"
                 aria-label="Source"
                 className="rounded p-2 text-text-muted hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors"
               >
                 <Code2 size={18} />
-              </a>
+              </HoverScale>
 
-              <a
+              <HoverScale
+                as="a"
                 href="mailto:tioprayudha04@gmail.com"
                 aria-label="Email"
                 className="rounded p-2 text-text-muted hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors"
               >
                 <Mail size={18} />
-              </a>
+              </HoverScale>
             </div>
           </div>
 
