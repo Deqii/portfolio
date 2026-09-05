@@ -17,7 +17,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, mounted } = useTheme();
 
   return (
     <div className="w-full">
@@ -37,7 +37,15 @@ export default function Navbar() {
               onClick={toggleTheme}
               className="inline-flex rounded p-2 text-text-muted hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors"
             >
-              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              {mounted ? (
+                theme === "dark" ? (
+                  <Sun size={18} />
+                ) : (
+                  <Moon size={18} />
+                )
+              ) : (
+                <Moon size={18} />
+              )}
             </button>
           </div>
 
