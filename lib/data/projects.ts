@@ -18,6 +18,7 @@ export interface Project {
   image: string;
   sourceUrl: string | null;
   liveUrl?: string;
+  featured?: boolean;
 }
 
 export const PROJECTS: Project[] = [
@@ -31,6 +32,8 @@ export const PROJECTS: Project[] = [
     ],
     image: "/img/project-himatif.png",
     sourceUrl: "https://github.com/Deqii/himatif-ypkp",
+    liveUrl: "https://himatif-ypkp.vercel.app/",
+    featured: true,
   },
   {
     name: "MelinjoScan",
@@ -42,6 +45,8 @@ export const PROJECTS: Project[] = [
       { name: "scikit-learn", icon: SiScikitlearn },
     ],
     image: "/img/project-melinjoscan.png",
-    sourceUrl: null,
+    sourceUrl: "https://github.com/Deqii/melinjoscan",
+    liveUrl: "https://melinjoscan.streamlit.app/",
+    featured: true,
   },
 ];
