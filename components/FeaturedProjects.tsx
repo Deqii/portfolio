@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { X } from "lucide-react";
-import { SiGithub } from "@icons-pack/react-simple-icons";
+import Link from "next/link";
+import { X, ArrowRight } from "lucide-react";
+import { SiGithub, SiWebtrees } from "@icons-pack/react-simple-icons";
 import Container from "@/components/Container";
 import { PROJECTS } from "@/lib/data/projects";
 import FadeInSection from "@/components/FadeInSection";
@@ -20,7 +21,7 @@ export default function FeaturedProjects() {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {PROJECTS.map((project) => (
+            {PROJECTS.filter((project) => project.featured).map((project) => (
               <div
                 key={project.name}
                 className="rounded-lg border border-border-light overflow-hidden"
@@ -65,7 +66,7 @@ export default function FeaturedProjects() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded bg-primary text-on-primary px-3 py-2 text-body-md hover:opacity-90 transition-opacity mr-2"
                     >
-                      Website
+                      <SiWebtrees size={16} /> Live
                     </a>
                   )}
                   {project.sourceUrl ? (
@@ -88,6 +89,14 @@ export default function FeaturedProjects() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="mt-8 flex justify-center">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 text-body-md text-on-surface hover:opacity-70 transition-opacity"
+            >
+              More Projects <ArrowRight size={16} />
+            </Link>
           </div>
         </section>
 
