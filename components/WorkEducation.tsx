@@ -20,9 +20,6 @@ const WORK_ITEMS = [
       "Worked with 4 other developers in daily standups, opened PRs, and reviewed teammates' code before merge.",
     ],
   },
-];
-
-const EDUCATION_ITEMS = [
   {
     company: "DBS Foundation x Dicoding",
     role: "Front-End & Back-End Developer",
@@ -34,6 +31,9 @@ const EDUCATION_ITEMS = [
       "Scored 87/100, placing in the top cohort of Coding Camp 2025.",
     ],
   },
+];
+
+const EDUCATION_ITEMS = [
   {
     company: "Universitas Sangga Buana YPKP",
     role: "Bachelor of Engineering, Informatics Engineering",

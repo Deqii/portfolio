@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { FileText, Moon, Sun, Menu, X } from "lucide-react";
 import Container from "@/components/Container";
 import HoverScale from "@/components/HoverScale";
+import { useScroll, useMotionValueEvent } from "motion/react";
 
 const NAV_LINKS = [
   { href: "/", label: "home" },
@@ -19,9 +20,21 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const { theme, toggleTheme, mounted } = useTheme();
+  const [scrolled, setScrolled] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 8);
+  });
 
   return (
-    <div className="w-full">
+    <div
+      className={`w-full sticky top-0 z-40 transition-all duration-300 ${
+        scrolled
+          ? "bg-surface/20 backdrop-blur-md border-b border-border-light"
+          : "border-b border-transparent"
+      }`}
+    >
       <Container>
         <nav className="relative w-full flex items-center justify-between sm:justify-center py-6">
           <div className="flex items-center gap-3 sm:hidden">
