@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { routing } from "@/i18n/routing";
 import Script from "next/script";
 import { Inter, JetBrains_Mono, Calistoga } from "next/font/google";
 
@@ -7,7 +10,7 @@ import Footer from "@/components/Footer";
 import { ThemeToggleProvider } from "@/components/ThemeToggleProvider";
 import { themeInitScript } from "@/lib/theme-script";
 
-import "./globals.css";
+import "../globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,10 +33,22 @@ export const metadata: Metadata = {
   description: "Personal portfolio site",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   return (
     <html
-      lang="en"
+      lang={locale}
       suppressHydrationWarning
       className={`${inter.variable} ${jetbrainsMono.variable} ${calistoga.variable} h-full antialiased`}
     >
@@ -43,11 +58,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: themeInitScript }}
         />
-        <ThemeToggleProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </ThemeToggleProvider>
+        <NextIntlClientProvider>
+          <ThemeToggleProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </ThemeToggleProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
