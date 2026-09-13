@@ -1,1 +1,42 @@
-{}
+{
+  "nav": {
+    "home": "beranda",
+    "projects": "proyek",
+    "certificates": "sertifikat",
+    "contact": "kontak"
+  },
+  "home": {
+    "greeting": "hai, saya tio. 👋",
+    "location": "Fullstack Developer dari Bandung, Indonesia 🇮🇩",
+    "tagline": "Membangun aplikasi web end-to-end, dari logika backend hingga UI yang rapi.",
+    "chatNote": "Untuk tanya jawab, silakan",
+    "chatAction": "mulai chat",
+    "chatComingSoon": "fitur chat segera hadir.",
+    "resumeButton": "Resume"
+  },
+  "workEducation": {
+    "experienceTab": "Pengalaman",
+    "educationTab": "Pendidikan"
+  },
+  "skills": {
+    "heading": "keahlian"
+  },
+  "projects": {
+    "featuredHeading": "proyek unggulan",
+    "moreProjects": "Lihat Semua Proyek",
+    "pageHeading": "proyek",
+    "pageSubheading": "Kumpulan proyek teknis dan eksperimen.",
+    "websiteButton": "Situs",
+    "sourceButton": "Sumber"
+  },
+  "certificates": {
+    "pageHeading": "sertifikat",
+    "pageSubheading": "Sertifikasi dan pelatihan yang telah diselesaikan.",
+    "viewCertificate": "Lihat Sertifikat"
+  },
+  "contact": {
+    "pageHeading": "kontak",
+    "pageSubheading": "Jangan ragu untuk menghubungi melalui saluran berikut.",
+    "downloadResume": "Unduh Resume"
+  }
+}

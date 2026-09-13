@@ -9,9 +9,12 @@ import Container from "@/components/Container";
 import { PROJECTS } from "@/lib/data/projects";
 import FadeInSection from "@/components/FadeInSection";
 import HoverScale from "./HoverScale";
+import { useLocale } from "next-intl";
+import { truncate } from "@/lib/utils";
 
 export default function FeaturedProjects() {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  const locale = useLocale() as "en" | "id";
 
   return (
     <Container>
@@ -46,7 +49,7 @@ export default function FeaturedProjects() {
                     {project.name}
                   </h3>
                   <p className="text-body-md text-text-muted mb-4">
-                    {project.description}
+                    {truncate(project.description[locale], 160)}
                   </p>
 
                   <div className="flex flex-wrap gap-2 mb-4">

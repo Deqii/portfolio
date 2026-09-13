@@ -1,1 +1,42 @@
-{}
+{
+  "nav": {
+    "home": "home",
+    "projects": "projects",
+    "certificates": "certificates",
+    "contact": "contact"
+  },
+  "home": {
+    "greeting": "hi, I'm tio. 👋",
+    "location": "Fullstack Developer from Bandung, Indonesia 🇮🇩",
+    "tagline": "Building web apps end-to-end, from backend logic to polished UI.",
+    "chatNote": "For Q&A, feel free to",
+    "chatAction": "start a chat",
+    "chatComingSoon": "chat support coming soon.",
+    "resumeButton": "Resume"
+  },
+  "workEducation": {
+    "experienceTab": "Experience",
+    "educationTab": "Education"
+  },
+  "skills": {
+    "heading": "skills"
+  },
+  "projects": {
+    "featuredHeading": "featured projects",
+    "moreProjects": "More Projects",
+    "pageHeading": "projects",
+    "pageSubheading": "A selection of technical projects and experiments.",
+    "websiteButton": "Website",
+    "sourceButton": "Source"
+  },
+  "certificates": {
+    "pageHeading": "certificates",
+    "pageSubheading": "Certifications and training completed.",
+    "viewCertificate": "View Certificate"
+  },
+  "contact": {
+    "pageHeading": "contact",
+    "pageSubheading": "Feel free to reach out through any of the channels below.",
+    "downloadResume": "Download Resume"
+  }
+}
