@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useLocale } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Container from "@/components/Container";
 import FadeInSection from "@/components/FadeInSection";
 
@@ -64,6 +64,7 @@ export default function WorkEducation() {
   const [activeTab, setActiveTab] = useState<Tab>("work");
   const locale = useLocale() as "en" | "id";
   const items = activeTab === "work" ? WORK_ITEMS : EDUCATION_ITEMS;
+  const t = useTranslations("workEducation");
 
   return (
     <Container>
@@ -80,7 +81,7 @@ export default function WorkEducation() {
                     : "text-text-muted"
                 }`}
               >
-                Experience
+                {t("experienceTab")}
               </button>
               <button
                 type="button"
@@ -91,7 +92,7 @@ export default function WorkEducation() {
                     : "text-text-muted"
                 }`}
               >
-                Education
+                {t("educationTab")}
               </button>
             </div>
 

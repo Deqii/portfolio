@@ -1,10 +1,15 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { FileText, Link as LinkIcon, Code2, Mail } from "lucide-react";
 import Container from "@/components/Container";
 import FadeInSection from "@/components/FadeInSection";
 import HoverScale from "@/components/HoverScale";
 
 export default function Hero() {
+  const t = useTranslations("home");
+
   return (
     <Container>
       <FadeInSection>
@@ -14,23 +19,19 @@ export default function Hero() {
               className="text-display-hero-mobile sm:text-display-hero text-on-surface text-2xl"
               style={{ fontFamily: "var(--font-calistoga)" }}
             >
-              hi, I&apos;m tio. 👋
+              {t("greeting")}
             </h1>
 
-            <p className="text-body-md text-text-muted mt-4">
-              Fullstack Developer from Bandung, Indonesia 🇮🇩
-            </p>
+            <p className="text-body-md text-text-muted mt-4">{t("location")}</p>
 
-            <p className="text-body-lg text-on-surface mt-2">
-              Building web apps end-to-end, from backend logic to polished UI.
-            </p>
+            <p className="text-body-lg text-on-surface mt-2">{t("location")}</p>
 
             <p className="text-body-md text-text-muted mt-2">
-              For Q&amp;A, feel free to{" "}
+              {t("chatNote")}{" "}
               <span className="text-on-surface underline cursor-pointer">
-                start a chat
+                {t("chatAction")}
               </span>{" "}
-              <br /> chat support coming soon.
+              <br /> {t("chatComingSoon")}
             </p>
 
             <div className="mt-8 flex items-center gap-3">
@@ -39,7 +40,7 @@ export default function Hero() {
                 href="/img/resume.pdf"
                 className="inline-flex items-center gap-2 rounded bg-primary text-on-primary px-4 py-2 text-body-md hover:opacity-90 transition-opacity"
               >
-                Resume <FileText size={16} />
+                {t("resumeButton")} <FileText size={16} />
               </HoverScale>
 
               <HoverScale

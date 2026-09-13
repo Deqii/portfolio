@@ -9,19 +9,20 @@ import Container from "@/components/Container";
 import { PROJECTS } from "@/lib/data/projects";
 import FadeInSection from "@/components/FadeInSection";
 import HoverScale from "./HoverScale";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { truncate } from "@/lib/utils";
 
 export default function FeaturedProjects() {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
   const locale = useLocale() as "en" | "id";
+  const t = useTranslations("projects");
 
   return (
     <Container>
       <FadeInSection>
         <section className="py-12">
           <h2 className="text-headline-section text-on-surface mb-6">
-            featured projects
+            {t("featuredHeading")}
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -103,7 +104,8 @@ export default function FeaturedProjects() {
               href="/projects"
               className="inline-flex items-center gap-2 text-body-md text-on-surface hover:opacity-70 transition-opacity"
             >
-              More Projects <ArrowRight size={16} />
+              {t("moreProjects")} <ArrowRight size={16} />{" "}
+              <ArrowRight size={16} />
             </Link>
           </div>
         </section>
