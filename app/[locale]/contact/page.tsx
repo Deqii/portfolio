@@ -1,8 +1,11 @@
-import { Mail, Download } from "lucide-react";
-import { SiLinkerd, SiGithub } from "@icons-pack/react-simple-icons";
+"use client";
+
+import { Mail, Download, Link as LinkIcon } from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import Container from "@/components/Container";
 import FadeInSection from "@/components/FadeInSection";
 import HoverScale from "@/components/HoverScale";
+import { useTranslations } from "next-intl";
 
 const CONTACT_LINKS = [
   {
@@ -15,7 +18,7 @@ const CONTACT_LINKS = [
     label: "LinkedIn",
     value: "linkedin.com/in/tio-prayudha",
     href: "https://linkedin.com/in/tio-prayudha",
-    icon: SiLinkerd,
+    icon: LinkIcon,
   },
   {
     label: "GitHub",
@@ -26,15 +29,17 @@ const CONTACT_LINKS = [
 ];
 
 export default function ContactPage() {
+  const t = useTranslations("contact");
+
   return (
     <Container>
       <FadeInSection>
         <section className="py-12">
           <h1 className="text-display-hero-mobile md:text-display-hero text-on-surface mb-4 font-extrabold tracking-tight">
-            contact
+            {t("pageHeading")}
           </h1>
           <p className="text-body-lg text-on-surface-variant max-w-2xl mb-12">
-            Feel free to reach out through any of the channels below.
+            {t("pageSubheading")}
           </p>
 
           <div className="flex flex-col gap-3 mb-8">
@@ -67,7 +72,7 @@ export default function ContactPage() {
             className="inline-flex items-center gap-2 rounded bg-primary text-on-primary px-5 py-2.5 text-body-md hover:opacity-90 transition-opacity"
           >
             <Download size={16} />
-            Download Resume
+            {t("downloadResume")}
           </HoverScale>
         </section>
       </FadeInSection>
