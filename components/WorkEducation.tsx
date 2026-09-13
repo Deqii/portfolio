@@ -27,9 +27,6 @@ const WORK_ITEMS = [
       ],
     },
   },
-];
-
-const EDUCATION_ITEMS = [
   {
     company: "DBS Foundation x Dicoding",
     role: "Front-End & Back-End Developer",
@@ -48,6 +45,9 @@ const EDUCATION_ITEMS = [
       ],
     },
   },
+];
+
+const EDUCATION_ITEMS = [
   {
     company: "Universitas Sangga Buana YPKP",
     role: "Bachelor of Engineering, Informatics Engineering",
