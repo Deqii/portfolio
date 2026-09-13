@@ -1,13 +1,20 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import Container from "@/components/Container";
 import { SKILL_GROUPS } from "@/lib/data/skills";
 import FadeInSection from "@/components/FadeInSection";
 
 export default function Skills() {
+  const t = useTranslations("skills");
+
   return (
     <Container>
       <FadeInSection>
         <section className="py-12">
-          <h2 className="text-headline-section text-on-surface mb-6">skills</h2>
+          <h2 className="text-headline-section text-on-surface mb-6">
+            {t("heading")}
+          </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {SKILL_GROUPS.map((group) => (
