@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useLocale } from "next-intl";
 import Container from "@/components/Container";
 import FadeInSection from "@/components/FadeInSection";
-import HoverScale from "@/components/HoverScale";
 
 type Tab = "work" | "education";
 
@@ -14,37 +14,55 @@ const WORK_ITEMS = [
     role: "Front-End Developer Intern",
     period: "Oct 2025 - Jan 2026",
     logo: "/img/logo-tei.jpg",
-    bullets: [
-      "Redesigned the Luarsekolah landing page using Laravel Blade and Tailwind CSS, taking the Lighthouse score from around 60 to 92 across all device breakpoints.",
-      "Built 8+ reusable Blade components and integrated 3 backend API endpoints, cutting down template duplication and enabling dynamic content rendering.",
-      "Worked with 4 other developers in daily standups, opened PRs, and reviewed teammates' code before merge.",
-    ],
-  },
-  {
-    company: "DBS Foundation x Dicoding",
-    role: "Front-End & Back-End Developer",
-    period: "May 2025 - Jul 2025",
-    logo: "/img/logo-dicoding.jpg",
-    bullets: [
-      "Led a 5-person team to build Nutrilance, a web app where users enter dietary data and get personalized diet plans, food recommendations, and recipes powered by an ML model.",
-      "Built the full frontend with React.js and Tailwind CSS, plus Flask REST APIs with SQLite, connecting ML predictions to a responsive UI with a Lighthouse performance score above 85%.",
-      "Scored 87/100, placing in the top cohort of Coding Camp 2025.",
-    ],
+    bullets: {
+      en: [
+        "Redesigned the Luarsekolah landing page using Laravel Blade and Tailwind CSS, taking the Lighthouse score from around 60 to 92 across all device breakpoints.",
+        "Built 8+ reusable Blade components and integrated 3 backend API endpoints, cutting down template duplication and enabling dynamic content rendering.",
+        "Worked with 4 other developers in daily standups, opened PRs, and reviewed teammates' code before merge.",
+      ],
+      id: [
+        "Mendesain ulang landing page Luarsekolah menggunakan Laravel Blade dan Tailwind CSS, meningkatkan skor Lighthouse dari sekitar 60 ke 92 di semua ukuran perangkat.",
+        "Membangun lebih dari 8 komponen Blade yang dapat digunakan kembali dan mengintegrasikan 3 endpoint API backend, mengurangi duplikasi template dan memungkinkan rendering konten dinamis.",
+        "Bekerja dengan 4 developer lain dalam daily standup, membuka PR, dan mereview kode rekan tim sebelum merge.",
+      ],
+    },
   },
 ];
 
 const EDUCATION_ITEMS = [
   {
+    company: "DBS Foundation x Dicoding",
+    role: "Front-End & Back-End Developer",
+    period: "May 2025 - Jul 2025",
+    logo: "/img/logo-dicoding.jpg",
+    bullets: {
+      en: [
+        "Led a 5-person team to build Nutrilance, a web app where users enter dietary data and get personalized diet plans, food recommendations, and recipes powered by an ML model.",
+        "Built the full frontend with React.js and Tailwind CSS, plus Flask REST APIs with SQLite, connecting ML predictions to a responsive UI with a Lighthouse performance score above 85%.",
+        "Scored 87/100, placing in the top cohort of Coding Camp 2025.",
+      ],
+      id: [
+        "Memimpin tim beranggotakan 5 orang untuk membangun Nutrilance, aplikasi web di mana pengguna memasukkan data pola makan dan mendapatkan rencana diet, rekomendasi makanan, dan resep yang didukung model ML.",
+        "Membangun seluruh frontend dengan React.js dan Tailwind CSS, serta REST API Flask dengan SQLite, menghubungkan prediksi ML ke UI responsif dengan skor performa Lighthouse di atas 85%.",
+        "Meraih skor 87/100, masuk ke kohort terbaik Coding Camp 2025.",
+      ],
+    },
+  },
+  {
     company: "Universitas Sangga Buana YPKP",
     role: "Bachelor of Engineering, Informatics Engineering",
     period: "Oct 2022 - 2026",
     logo: "/img/logo-usb.jpg",
-    bullets: ["GPA 3.87 / 4.00"],
+    bullets: {
+      en: ["GPA 3.87 / 4.00"],
+      id: ["IPK 3.87 / 4.00"],
+    },
   },
 ];
 
 export default function WorkEducation() {
   const [activeTab, setActiveTab] = useState<Tab>("work");
+  const locale = useLocale() as "en" | "id";
   const items = activeTab === "work" ? WORK_ITEMS : EDUCATION_ITEMS;
 
   return (
@@ -53,8 +71,7 @@ export default function WorkEducation() {
         <section className="py-8">
           <div className="rounded-lg border border-border-light p-6">
             <div className="inline-flex rounded-full bg-surface-container p-1">
-              <HoverScale
-                as="button"
+              <button
                 type="button"
                 onClick={() => setActiveTab("work")}
                 className={`px-6 py-2 rounded-full text-body-md cursor-pointer transition-colors ${
@@ -64,9 +81,8 @@ export default function WorkEducation() {
                 }`}
               >
                 Experience
-              </HoverScale>
-              <HoverScale
-                as="button"
+              </button>
+              <button
                 type="button"
                 onClick={() => setActiveTab("education")}
                 className={`px-6 py-2 rounded-full text-body-md cursor-pointer transition-colors ${
@@ -76,7 +92,7 @@ export default function WorkEducation() {
                 }`}
               >
                 Education
-              </HoverScale>
+              </button>
             </div>
 
             <div className="mt-8 flex flex-col gap-8">
@@ -105,7 +121,7 @@ export default function WorkEducation() {
                     </p>
 
                     <ul className="mt-3 flex flex-col gap-2">
-                      {item.bullets.map((bullet) => (
+                      {item.bullets[locale].map((bullet) => (
                         <li
                           key={bullet}
                           className="text-body-md text-on-surface-variant pl-4 relative before:content-['•'] before:absolute before:left-0"

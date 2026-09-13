@@ -5,8 +5,11 @@ import Container from "@/components/Container";
 import { PROJECTS } from "@/lib/data/projects";
 import FadeInSection from "@/components/FadeInSection";
 import HoverScale from "@/components/HoverScale";
+import { useLocale } from "next-intl";
 
 export default function ProjectsPage() {
+  const locale = useLocale() as "en" | "id";
+
   return (
     <Container>
       <FadeInSection>
@@ -48,7 +51,7 @@ export default function ProjectsPage() {
                           {project.name}
                         </h2>
                         <p className="text-body-md text-on-surface-variant mb-6">
-                          {project.description}
+                          {project.description[locale]}
                         </p>
 
                         <div className="flex flex-wrap gap-2 mb-8">
