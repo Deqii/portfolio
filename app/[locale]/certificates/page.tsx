@@ -7,19 +7,21 @@ import Container from "@/components/Container";
 import { CERTIFICATES } from "@/lib/data/certificates";
 import FadeInSection from "@/components/FadeInSection";
 import HoverScale from "@/components/HoverScale";
+import { useTranslations } from "next-intl";
 
 export default function CertificatesPage() {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  const t = useTranslations("certificates");
 
   return (
     <Container>
       <FadeInSection>
         <section className="py-12">
           <h1 className="text-display-hero-mobile md:text-display-hero text-on-surface mb-4 font-extrabold tracking-tight">
-            certificates
+            {t("pageHeading")}
           </h1>
           <p className="text-body-lg text-on-surface-variant max-w-2xl mb-12">
-            Certifications and training completed.
+            {t("pageSubheading")}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -89,11 +91,11 @@ export default function CertificatesPage() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-body-md text-on-surface hover:opacity-70 transition-opacity"
                       >
-                        View Certificate <ExternalLink size={14} />
+                        {t("viewCertificate")} <ExternalLink size={14} />
                       </a>
                     ) : (
                       <span className="inline-flex items-center gap-1.5 text-body-md text-text-muted cursor-not-allowed">
-                        View Certificate <ExternalLink size={14} />
+                        {t("viewCertificate")} <ExternalLink size={14} />
                       </span>
                     )}
                   </div>
