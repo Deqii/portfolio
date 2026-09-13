@@ -1,9 +1,9 @@
 {
   "nav": {
-    "home": "beranda",
-    "projects": "proyek",
-    "certificates": "sertifikat",
-    "contact": "kontak"
+    "home": "home",
+    "projects": "projects",
+    "certificates": "certificates",
+    "contact": "contact"
   },
   "home": {
     "greeting": "hai, saya tio. 👋",

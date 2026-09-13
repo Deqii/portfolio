@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { useTheme } from "@/components/ThemeToggleProvider";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { FileText, Moon, Sun, Menu, X } from "lucide-react";
+import { Link, usePathname } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { FileText, Moon, Sun, Menu, X, Globe } from "lucide-react";
 import Container from "@/components/Container";
 import HoverScale from "@/components/HoverScale";
 import { useScroll, useMotionValueEvent } from "motion/react";
@@ -22,6 +22,9 @@ export default function Navbar() {
   const { theme, toggleTheme, mounted } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
+  const locale = useLocale();
+  const t = useTranslations("nav");
+  const otherLocale = locale === "en" ? "id" : "en";
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 8);
@@ -62,6 +65,19 @@ export default function Navbar() {
                 <Moon size={18} />
               )}
             </HoverScale>
+            <HoverScale className="inline-flex">
+              <Link
+                href={pathname}
+                locale={otherLocale}
+                aria-label="Switch language"
+                className="inline-flex items-center gap-1.5 rounded p-2 text-text-muted hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors text-body-md"
+              >
+                <Globe size={18} />
+                <span className="uppercase text-label-tag font-mono">
+                  {otherLocale}
+                </span>
+              </Link>
+            </HoverScale>
           </div>
 
           <div className="hidden sm:flex gap-6">
@@ -77,7 +93,7 @@ export default function Navbar() {
                       : "text-body-md text-text-muted hover:text-on-surface transition-colors"
                   }
                 >
-                  {link.label}
+                  {t(link.label)}
                 </Link>
               );
             })}
@@ -99,6 +115,19 @@ export default function Navbar() {
               className="inline-flex rounded p-2 text-text-muted hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors"
             >
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </HoverScale>
+            <HoverScale className="inline-flex">
+              <Link
+                href={pathname}
+                locale={otherLocale}
+                aria-label="Switch language"
+                className="inline-flex items-center gap-1.5 rounded p-2 text-text-muted hover:bg-surface-container hover:text-on-surface cursor-pointer transition-colors text-body-md"
+              >
+                <Globe size={18} />
+                <span className="uppercase text-label-tag font-mono">
+                  {otherLocale}
+                </span>
+              </Link>
             </HoverScale>
           </div>
 
@@ -128,7 +157,7 @@ export default function Navbar() {
                       : "text-body-md text-text-muted hover:text-on-surface transition-colors"
                   }
                 >
-                  {link.label}
+                  {t(link.label)}
                 </Link>
               );
             })}

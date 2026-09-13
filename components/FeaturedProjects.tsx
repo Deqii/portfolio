@@ -105,7 +105,6 @@ export default function FeaturedProjects() {
               className="inline-flex items-center gap-2 text-body-md text-on-surface hover:opacity-70 transition-opacity"
             >
               {t("moreProjects")} <ArrowRight size={16} />{" "}
-              <ArrowRight size={16} />
             </Link>
           </div>
         </section>
