@@ -1,6 +1,11 @@
 "use client";
 
-import { createContext, useContext, useSyncExternalStore } from "react";
+import {
+  createContext,
+  useContext,
+  useLayoutEffect,
+  useSyncExternalStore,
+} from "react";
 
 interface ThemeContextValue {
   theme: "light" | "dark";
@@ -53,6 +58,22 @@ export function ThemeToggleProvider({
     getThemeSnapshot,
     getServerThemeSnapshot
   );
+
+  useLayoutEffect(() => {
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem("theme");
+    } catch {
+      // localStorage unavailable
+    }
+    const resolved =
+      stored ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+    document.documentElement.classList.toggle("dark", resolved === "dark");
+    window.dispatchEvent(new Event(THEME_EVENT));
+  }, []);
 
   const toggleTheme = () => {
     const next = theme === "dark" ? "light" : "dark";

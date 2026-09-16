@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
-import Script from "next/script";
 import { Inter, JetBrains_Mono, Calistoga } from "next/font/google";
 
 import Navbar from "@/components/Navbar";
@@ -53,11 +52,7 @@ export default async function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} ${calistoga.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
-        <Script
-          id="theme-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: themeInitScript }}
-        />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <NextIntlClientProvider>
           <ThemeToggleProvider>
             <Navbar />
