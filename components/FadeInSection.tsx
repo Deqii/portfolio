@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
 export default function FadeInSection({
   children,
@@ -9,12 +9,18 @@ export default function FadeInSection({
   children: React.ReactNode;
   delay?: number;
 }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.4, ease: "easeOut", delay }}
+      viewport={{ once: true }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : 0.2,
+        ease: "easeOut",
+        delay,
+      }}
     >
       {children}
     </motion.div>
