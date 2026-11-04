@@ -45,6 +45,7 @@ export default async function ProjectsPage({
                         src={project.image}
                         alt={`${project.name} screenshot`}
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-contain rounded-md"
                       />
                     </div>

@@ -40,6 +40,7 @@ export default function CertificatesPage() {
                       src={cert.image}
                       alt={`${cert.title} certificate`}
                       fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
                       className="object-cover"
                     />
                   </button>
@@ -124,6 +125,7 @@ export default function CertificatesPage() {
                 src={lightboxImage}
                 alt="Full size certificate"
                 fill
+                sizes="(max-width: 768px) 100vw, 768px"
                 className="object-contain"
               />
             </div>
