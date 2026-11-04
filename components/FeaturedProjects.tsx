@@ -41,6 +41,7 @@ export default function FeaturedProjects() {
                     src={project.image}
                     alt={`${project.name} screenshot`}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </HoverScale>
@@ -129,6 +130,7 @@ export default function FeaturedProjects() {
                 src={lightboxImage}
                 alt="Full size screenshot"
                 fill
+                sizes="(max-width: 768px) 100vw, 768px"
                 className="object-contain"
               />
             </div>

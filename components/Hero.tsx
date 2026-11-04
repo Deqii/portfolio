@@ -75,10 +75,11 @@ export default function Hero() {
           <div className="order-1 sm:order-2 shrink-0">
             <div className="relative w-40 h-52 sm:w-56 sm:h-72 rounded-lg overflow-hidden shadow-lg rotate-3">
               <Image
-                src="/img/profile.jpg"
+                src="/img/profile.webp"
                 alt="Tio's profile photo"
                 fill
                 priority
+                sizes="224px"
                 className="object-cover"
               />
             </div>

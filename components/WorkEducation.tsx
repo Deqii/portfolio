@@ -104,6 +104,7 @@ export default function WorkEducation() {
                       src={item.logo}
                       alt={`${item.company} logo`}
                       fill
+                      sizes="48px"
                       className="object-cover"
                     />
                   </div>

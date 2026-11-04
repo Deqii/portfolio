@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Inter, JetBrains_Mono, Calistoga } from "next/font/google";
 
@@ -32,6 +33,10 @@ export const metadata: Metadata = {
   description: "Personal portfolio site",
 };
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export default async function RootLayout({
   children,
   params,
@@ -45,6 +50,8 @@ export default async function RootLayout({
     notFound();
   }
 
+  const messages = await getMessages({ locale });
+
   return (
     <html
       lang={locale}
@@ -53,7 +60,7 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-        <NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeToggleProvider>
             <Navbar />
             <main className="flex-1">{children}</main>
