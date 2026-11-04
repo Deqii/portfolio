@@ -5,10 +5,14 @@ import Container from "@/components/Container";
 import { PROJECTS } from "@/lib/data/projects";
 import FadeInSection from "@/components/FadeInSection";
 import HoverScale from "@/components/HoverScale";
-import { useLocale } from "next-intl";
 
-export default function ProjectsPage() {
-  const locale = useLocale() as "en" | "id";
+export default async function ProjectsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const activeLocale = locale as "en" | "id";
 
   return (
     <Container>
@@ -51,7 +55,7 @@ export default function ProjectsPage() {
                           {project.name}
                         </h2>
                         <p className="text-body-md text-on-surface-variant mb-6">
-                          {project.description[locale]}
+                          {project.description[activeLocale]}
                         </p>
 
                         <div className="flex flex-wrap gap-2 mb-8">
