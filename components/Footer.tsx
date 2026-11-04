@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Link as LinkIcon, Code2, Mail } from "lucide-react";
 import Container from "@/components/Container";
 import HoverScale from "@/components/HoverScale";
@@ -10,15 +9,7 @@ export default function Footer() {
     <footer className="w-full py-6">
       <Container>
         <div className="flex items-center justify-between">
-          <p className="text-body-md text-text-muted">
-            © {year} tio.dev |{" "}
-            <Link
-              href="/privacy"
-              className="text-text-muted hover:text-on-surface transition-colors underline"
-            >
-              privacy?
-            </Link>
-          </p>
+          <p className="text-body-md text-text-muted">© {year} tio.dev</p>
 
           <div className="flex items-center gap-3">
             <HoverScale
