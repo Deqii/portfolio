@@ -46,7 +46,7 @@ export const PROJECTS: Project[] = [
     image: "/img/project-melinjoscan.webp",
     sourceUrl: "https://github.com/Deqii/melinjoscan",
     liveUrl: "https://melinjoscan.streamlit.app/",
-    featured: true,
+    featured: false,
   },
   {
     name: "PBI Belajar Bekerja",
@@ -96,7 +96,7 @@ export const PROJECTS: Project[] = [
     ],
     image: "/img/project-job-tracker.webp",
     sourceUrl: "https://github.com/Deqii/dq-job-tracker",
-    featured: false,
+    featured: true,
   },
   {
     name: "Daily Tracker",
