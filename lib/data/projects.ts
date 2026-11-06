@@ -7,11 +7,18 @@ import {
   SiMysql,
   SiPython,
   SiScikitlearn,
+  SiReact,
+  SiTypescript,
+  SiExpress,
+  SiPrisma,
+  SiSvelte,
+  SiVite,
+  SiVitest,
 } from "@icons-pack/react-simple-icons";
 
 export interface ProjectTech {
   name: string;
-  icon: React.ComponentType<{ size?: number; color?: string }>;
+  icon?: React.ComponentType<{ size?: number; color?: string }>;
 }
 
 export interface Project {
@@ -71,6 +78,42 @@ export const PROJECTS: Project[] = [
     image: "/img/project-himatif.webp",
     sourceUrl: "https://github.com/Deqii/himatif-ypkp",
     liveUrl: "https://himatif-ypkp.vercel.app/",
+    featured: false,
+  },
+  {
+    name: "Job Application Tracker",
+    description: {
+      en: "Full-stack job application tracker with JWT authentication, a status pipeline with an append-only history timeline, a response-rate dashboard, and server-side Excel export. Built as an npm workspaces monorepo.",
+      id: "Aplikasi pelacak lamaran kerja full-stack dengan autentikasi JWT, pipeline status dengan riwayat append-only, dashboard response rate, dan ekspor Excel di sisi server. Dibangun sebagai monorepo npm workspaces.",
+    },
+    tech: [
+      { name: "React.js", icon: SiReact },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Express.js", icon: SiExpress },
+      { name: "Prisma ORM", icon: SiPrisma },
+      { name: "MySQL", icon: SiMysql },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+    ],
+    image: "/img/project-job-tracker.webp",
+    sourceUrl: "https://github.com/Deqii/dq-job-tracker",
+    featured: false,
+  },
+  {
+    name: "Daily Tracker",
+    description: {
+      en: "Gamified habit tracker with daily quests across five stats, XP, ranks from E to S, streaks, and a rewards wallet. Data stays in localStorage with JSON import and export. The rules engine is framework-free TypeScript with unit tests.",
+      id: "Pelacak kebiasaan bergaya game dengan quest harian untuk lima stat, XP, peringkat E sampai S, streak, dan dompet hadiah. Data tersimpan di localStorage dengan impor dan ekspor JSON. Rules engine ditulis sebagai TypeScript tanpa framework dan diuji dengan unit test.",
+    },
+    tech: [
+      { name: "Svelte", icon: SiSvelte },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Vite", icon: SiVite },
+      { name: "Vitest", icon: SiVitest },
+      { name: "Playwright" },
+    ],
+    image: "/img/project-daily-tracker.webp",
+    sourceUrl: "https://github.com/Deqii/daily-tracker",
+    liveUrl: "https://dq-daily-tracker.vercel.app",
     featured: false,
   },
 ];

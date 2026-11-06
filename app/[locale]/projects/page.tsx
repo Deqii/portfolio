@@ -65,7 +65,9 @@ export default async function ProjectsPage({
                               key={tech.name}
                               className="inline-flex items-center gap-1.5 text-label-tag font-mono text-on-surface-variant bg-surface-muted rounded-full px-3 py-1.5 border border-border-light"
                             >
-                              <tech.icon size={14} color="currentColor" />
+                              {tech.icon && (
+                                <tech.icon size={14} color="currentColor" />
+                              )}
                               {tech.name}
                             </span>
                           ))}
