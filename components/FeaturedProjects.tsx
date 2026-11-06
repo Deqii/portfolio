@@ -60,7 +60,9 @@ export default function FeaturedProjects() {
                         key={tech.name}
                         className="inline-flex items-center gap-1.5 text-label-tag font-mono text-on-surface-variant bg-surface-muted rounded-full px-3 py-1.5"
                       >
-                        <tech.icon size={14} color="currentColor" />
+                        {tech.icon && (
+                          <tech.icon size={14} color="currentColor" />
+                        )}
                         {tech.name}
                       </span>
                     ))}
