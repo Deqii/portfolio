@@ -1,10 +1,10 @@
-import Image from "next/image";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { ExternalLink, LinkIcon } from "lucide-react";
 import Container from "@/components/Container";
 import { PROJECTS } from "@/lib/data/projects";
 import FadeInSection from "@/components/FadeInSection";
 import HoverScale from "@/components/HoverScale";
+import ProjectImageLightbox from "@/components/ProjectImageLightbox";
 
 export default async function ProjectsPage({
   params,
@@ -41,10 +41,9 @@ export default async function ProjectsPage({
                     }`}
                   >
                     <div className="md:w-1/2 h-64 md:h-auto min-h-[260px] relative bg-surface-muted flex items-center justify-center p-4 border-b md:border-b-0 border-border-light">
-                      <Image
+                      <ProjectImageLightbox
                         src={project.image}
                         alt={`${project.name} screenshot`}
-                        fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-contain rounded-md"
                       />
