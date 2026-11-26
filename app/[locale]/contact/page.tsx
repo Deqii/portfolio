@@ -1,32 +1,11 @@
 "use client";
 
-import { Mail, Download, Link as LinkIcon } from "lucide-react";
-import { SiGithub } from "@icons-pack/react-simple-icons";
+import { Download } from "lucide-react";
 import Container from "@/components/Container";
 import FadeInSection from "@/components/FadeInSection";
 import HoverScale from "@/components/HoverScale";
 import { useTranslations } from "next-intl";
-
-const CONTACT_LINKS = [
-  {
-    label: "Email",
-    value: "tioprayudha04@gmail.com",
-    href: "mailto:tioprayudha04@gmail.com",
-    icon: Mail,
-  },
-  {
-    label: "LinkedIn",
-    value: "linkedin.com/in/tio-prayudha",
-    href: "https://linkedin.com/in/tio-prayudha",
-    icon: LinkIcon,
-  },
-  {
-    label: "GitHub",
-    value: "github.com/Deqii",
-    href: "https://github.com/Deqii",
-    icon: SiGithub,
-  },
-];
+import { CONTACT_LINKS } from "@/lib/data/contact";
 
 export default function ContactPage() {
   const t = useTranslations("contact");
